@@ -1,0 +1,43 @@
+CREATE DATABASE IF NOT EXISTS libreria;
+
+USE libreria;
+
+-- Crea la tabla Authors
+CREATE TABLE IF NOT EXISTS Authors (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL
+);
+
+-- Crea la tabla Books
+CREATE TABLE IF NOT EXISTS Books (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    Chapters INT NOT NULL,
+    Pages INT NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    AuthorId INT,
+    FOREIGN KEY (AuthorId) REFERENCES Authors(Id)
+);
+INSERT INTO Authors (Name) VALUES
+('J.K. Rowling'),
+('George R.R. Martin'),
+('Jane Austen'),
+('Stephen King'),
+('Agatha Christie'),
+('Haruki Murakami'),
+('Gabriel García Márquez'),
+('Tolkien'),
+('Isaac Asimov'),
+('J.R.R. Tolkien');
+
+INSERT INTO Books (Title, Chapters, Pages, Price, AuthorId) VALUES
+('Harry Potter and the Sorcerer''s Stone', 17, 309, 25.99, 1),
+('A Game of Thrones', 73, 694, 29.99, 2),
+('Pride and Prejudice', 61, 279, 19.99, 3),
+('The Shining', 56, 447, 22.99, 4),
+('Murder on the Orient Express', 12, 274, 18.99, 5),
+('Norwegian Wood', 37, 296, 21.99, 6),
+('One Hundred Years of Solitude', 20, 417, 23.99, 7),
+('The Hobbit', 19, 310, 24.99, 8),
+('Foundation', 22, 244, 20.99, 9),
+('The Fellowship of the Ring', 25, 398, 26.99, 10);

@@ -18,26 +18,29 @@ CREATE TABLE IF NOT EXISTS Books (
     AuthorId INT,
     FOREIGN KEY (AuthorId) REFERENCES Authors(Id)
 );
+-- Inserta datos en la tabla Authors
 INSERT INTO Authors (Name) VALUES
-('J.K. Rowling'),
-('George R.R. Martin'),
-('Jane Austen'),
-('Stephen King'),
-('Agatha Christie'),
-('Haruki Murakami'),
-('Gabriel García Márquez'),
-('Tolkien'),
-('Isaac Asimov'),
-('J.R.R. Tolkien');
+    ('Isaac Asimov'),
+    ('Arthur C. Clarke'),
+    ('Philip K. Dick'),
+    ('Ursula K. Le Guin'),
+    ('H.G. Wells'),
+    ('Ray Bradbury'),
+    ('Frank Herbert'),
+    ('William Gibson'),
+    ('Robert A. Heinlein'),
+    ('Octavia E. Butler');
 
+-- Inserta datos en la tabla Books
 INSERT INTO Books (Title, Chapters, Pages, Price, AuthorId) VALUES
-('Harry Potter and the Sorcerer''s Stone', 17, 309, 25.99, 1),
-('A Game of Thrones', 73, 694, 29.99, 2),
-('Pride and Prejudice', 61, 279, 19.99, 3),
-('The Shining', 56, 447, 22.99, 4),
-('Murder on the Orient Express', 12, 274, 18.99, 5),
-('Norwegian Wood', 37, 296, 21.99, 6),
-('One Hundred Years of Solitude', 20, 417, 23.99, 7),
-('The Hobbit', 19, 310, 24.99, 8),
-('Foundation', 22, 244, 20.99, 9),
-('The Fellowship of the Ring', 25, 398, 26.99, 10);
+    ('Foundation', 7, 500, 19.99, 1),
+    ('2001: A Space Odyssey', 10, 300, 14.99, 2),
+    ('Do Androids Dream of Electric Sheep?', 20, 256, 12.99, 3),
+    ('The Left Hand of Darkness', 12, 320, 17.99, 4),
+    ('The War of the Worlds', 15, 280, 15.99, 5),
+    ('Fahrenheit 451', 8, 200, 9.99, 6),
+    ('Dune', 30, 600, 24.99, 7),
+    ('Neuromancer', 18, 320, 16.99, 8),
+    ('Stranger in a Strange Land', 25, 450, 21.99, 9),
+    ('Kindred', 14, 350, 18.99, 10);
+

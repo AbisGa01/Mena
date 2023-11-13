@@ -42,5 +42,4 @@ public class BooksController : ControllerBase
         return CreatedAtAction("GetBook", new { id = book.Id }, book);
     }
 
-    // Otros métodos para actualizar y eliminar libros
 }
